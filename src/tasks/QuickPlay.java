@@ -33,10 +33,7 @@ public class QuickPlay implements Runnable {
 			
 			_lobby.trace(playerOne.getName(), "VS", playerTwo.getName());
 			
-			int gameId = playerOne.getVariable(LobbyExtension.GAME_ID).getIntValue();
-			int userId = playerOne.getVariable(LobbyExtension.USER_ID).getIntValue();
-			
-			String room = RoomManager.createRoomDB(gameId, userId);
+			String room = RoomManager.createRoom(playerOne);
 			
 			ISFSObject params = new SFSObject();
 			params.putUtfString("room", room);
